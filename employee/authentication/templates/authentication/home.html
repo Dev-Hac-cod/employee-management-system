@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h2>Sign In/Up </h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1></h1>
+			<div class="social-container">
+				
+			</div>
+			<a href="/signup">
+                <button type="button">Sign Up</button> 
+            </a>
+			<br>
+			<a href="/signin">
+                <button type="button">Sign In</button> 
+            </a>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			
+			<div class="social-container">
+				
+			</div>
+			
+			
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome </h1>
+				<p>Select Signin or SignUp</p>
+				<button class="ghost" id="signIn">Click Here</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Employee Register</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Click Here</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		
+	</p>
+</footer>
+<script>
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+</script>
+</body>
+</html>

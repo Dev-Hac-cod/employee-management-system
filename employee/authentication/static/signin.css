@@ -1,0 +1,102 @@
+.form__group{
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+  }
+  .form__group1{
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 30%;
+    width: 50%; 
+  }
+  .form__group2{
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 30%;
+    width: 50%;
+    left: 30%;
+  }
+  .form__field {
+    font-family: inherit;
+    width: 300%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field::placeholder{
+    color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+  .form__label{
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+  }
+  .form__field:focus{
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right,#11998e,#38ef7d);
+    border-image-slice:1;
+  }
+  .form__field:focus ~ .form__label{
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+  }
+  .form__field:required, .form__field:invalid{
+    box-shadow: none;
+  }
+  
+  body{
+    font-family: "poppins",sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    background-color: #222222;
+    position: absolute;
+    right: 50%;
+    top: -10%;
+  }
+  .bt {
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 0 10px;
+    width: 200px;
+    padding: 10px 0;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+    transition: 0.4s;
+    color: rgb(104, 85, 224);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+  }
+  button:hover{
+    color: white;
+    box-shadow: 0 0 20px rgba(145, 130, 245, 0.445);
+    background-color: rgb(131, 119, 214);
+  
+  }
+  
+  
+  

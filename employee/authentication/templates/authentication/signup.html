@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cool Login form | By Code Info</title>
+  <link rel="stylesheet" href="style.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'signup.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>   <!-- Font Awesome Cdn Link -->
+</head>
+<body>
+  <div id="content">
+    
+    {% block content %}{% endblock content %}
+  </div>
+  <div class="wrapper">
+    <h1>SignUp Form</h1>
+    <p>Create your UserID <br> And Password</p>
+    <form action="/signup" method="post">
+      {% csrf_token %}
+      <input type="text" id="username" name="username" placeholder="Enter UserID" required>
+      {% include "authentication/message.html" %} 
+      <input type="email" id="email" name="email" placeholder="Enter Email" required>
+      <input type="password" id="pass1" name="pass1" placeholder="New Password" required>
+      <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" required>
+      <p class="recover">
+        <a href="#">Recover Password</a>
+      </p>
+      <button type="submit">Sign Up</button>
+    </form>
+    
+    <p class="or">
+      ----- or continue with -----
+    </p>
+    <div class="icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-facebook"></i>
+    </div>
+    <div class="not-member">
+      Not a member? <a href="#">Register Now</a>
+    </div>
+  </div>
+</body>
+</html>
