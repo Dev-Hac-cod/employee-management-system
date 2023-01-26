@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
-import django_heroku
 SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -92,8 +91,12 @@ WSGI_APPLICATION = 'employee.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bckbeilxwxpduhfofhmo',
+        'USER': 'uouhp597zn7fdvtrwfoy',
+        'PASSWORD': '5gAlLMn4H7wRVqm6nABO38egbgAEzw',
+        'HOST': 'bckbeilxwxpduhfofhmo-postgresql.services.clever-cloud.com',
+        'PORT': '5432',
     }
 }
 
@@ -145,4 +148,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())

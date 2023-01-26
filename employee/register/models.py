@@ -14,4 +14,4 @@ class Employee(models.Model):
     Email=models.CharField(max_length=100)
     mobile = models.CharField(max_length=15)
     emp_code= models.CharField(max_length=100)
-    position = models.ForeignKey(positions,on_delete=models.CASCADE)
+    position = models.CharField(max_length=20)
