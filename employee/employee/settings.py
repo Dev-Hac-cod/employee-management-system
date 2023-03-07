@@ -91,12 +91,8 @@ WSGI_APPLICATION = 'employee.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bckbeilxwxpduhfofhmo',
-        'USER': 'uouhp597zn7fdvtrwfoy',
-        'PASSWORD': '5gAlLMn4H7wRVqm6nABO38egbgAEzw',
-        'HOST': 'bckbeilxwxpduhfofhmo-postgresql.services.clever-cloud.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

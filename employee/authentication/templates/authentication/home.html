@@ -4,72 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>LOGIN</title>
     {% load static %}
-  <link rel="stylesheet" href="{% static 'home.css' %}">
-    <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 <body>
-<h2>Sign In/Up </h2>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1></h1>
-			<div class="social-container">
-				
+	<div id="content">
+		{% block content %}{% endblock content %}
+	  </div>
+    <div class="container">
+		<input type="checkbox" id="flip">
+		<div class="cover">
+		  <div class="front">
+			<img  alt="">
+			<div class="text">
 			</div>
-			<a href="/signup">
-                <button type="button">Sign Up</button> 
-            </a>
-			<br>
-			<a href="/signin">
-                <button type="button">Sign In</button> 
-            </a>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			
-			<div class="social-container">
-				
+		  </div>
+		  <div class="back">
+			<!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+			<div class="text">
 			</div>
-			
-			
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome </h1>
-				<p>Select Signin or SignUp</p>
-				<button class="ghost" id="signIn">Click Here</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Employee Register</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Click Here</button>
-			</div>
+		  </div>
 		</div>
-	</div>
-</div>
-
-<footer>
-	<p>
-		
-	</p>
-</footer>
-<script>
-    const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
-</script>
+		<div class="forms">
+			<div class="form-content">
+			  <div class="login-form">
+				<div class="title">Login</div>
+					{% for message in messages %}
+						<div class="alert alert-warning" role="alert">
+							{{ message }}
+			  			</div>
+					{% endfor %}
+				<form action="/signin" method="post">
+					{% csrf_token %}
+				<div class="input-boxes">
+				  <div class="input-box"> 
+					<i class="fas fa-envelope"></i>
+					<input type="email" class="form__field" placeholder="Enter your email" name="username" id="username" required>
+				</div>
+				  <div class="input-box">
+					<i class="fas fa-lock"></i>
+					<input type="password" class="form__field" placeholder="Enter your password" name="pass1" id="pass1">
+				</div>
+				  <div class="text"><a href="#">Forgot password?</a></div>
+				  <div class="button input-box">
+					<input type="submit" value="Sumbit">
+				  </div>
+				  <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+				</div>
+			</form>
+		  </div>
+			<div class="signup-form">
+			  <div class="title">Signup</div>
+			  <form action="/signup" method="post">
+				{% csrf_token %}
+				<div class="input-boxes">
+				  <div class="input-box">
+					<i class="fas fa-user"></i>
+					<input type="text" id="email" name="email" placeholder="Enter your name" required>
+				</div>
+				  <div class="input-box">
+					<i class="fas fa-envelope"></i>
+					<input type="email" id="username" name="username" placeholder="Enter your email" required>
+				  </div>
+				  <div class="input-box">
+					<i class="fas fa-lock"></i>
+					<input type="password" id="pass1" name="pass1" placeholder="Enter your password" required>
+				  </div>
+				  <div class="button input-box">
+					<input type="submit" value="Sumbit">
+				  </div>
+				  <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+				</div>
+		  </form>
+		</div>
+		</div>
+		</div>
+	  </div>
 </body>
 </html>
